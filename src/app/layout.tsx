@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/pageHeader";
+import { createClient } from "@/utils/supabase/server";
+import { ProfileProvider } from "@/contexts/profileContext";
+import { Profile, profileSelectString } from "@/types/profile";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,17 +10,49 @@ export const metadata: Metadata = {
   description: "Public Sailing Race Organizer",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <PageHeader />
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    </div>
+    <html lang="en">
+      <ProfileProvider profile={await getProfile()}>
+        <body>
+          {children}
+        </body>
+      </ProfileProvider>
+    </html>
   );
+}
+
+
+async function getProfile(): Promise<Profile | undefined> {
+  const supabase = await createClient()
+
+  const user = await supabase.auth.getUser()
+
+  if (!user || !user.data.user) {
+    return undefined
+  }
+
+  const data = await supabase
+    .from('profiles')
+    .select(profileSelectString)
+    .eq('id', user.data.user?.id)
+
+  let profile: Profile | undefined = undefined
+
+  if (data.data && data.data.length > 0) {
+    profile = data.data[0]
+  }
+
+  if (profile) {
+    profile.username = user.data.user.email ?? null
+  }
+
+  // console.log(profile)
+
+  return profile
+
 }
