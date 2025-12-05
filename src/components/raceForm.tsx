@@ -1,4 +1,4 @@
-import ProfileHeader from "./profileHeader"
+import ProfileHeader from "./loggedInNav"
 
 export default function RaceForm() {
     return (

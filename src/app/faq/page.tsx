@@ -1,12 +1,12 @@
 'use client'
-import ProfileHeader from '@/components/profileHeader';
+import ProfileHeader from '@/components/loggedInNav';
 import { useProfile } from "@/contexts/profileContext"
 
 
 export default function Home() {
   return (
     <main>
-      <ProfileHeader></ProfileHeader>
+      {/* <ProfileHeader></ProfileHeader> */}
       <div>FAQ</div>
     </main>
   );

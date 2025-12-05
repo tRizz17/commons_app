@@ -1,5 +1,5 @@
 import { login, signup } from './actions'
-import ProfileHeader from '@/components/profileHeader'
+import ProfileHeader from '@/components/loggedInNav'
 
 export default function loginPage() {
     return (

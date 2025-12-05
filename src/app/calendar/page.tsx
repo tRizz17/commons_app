@@ -1,11 +1,11 @@
 'use client'
-import ProfileHeader from "@/components/profileHeader"
+import ProfileHeader from "@/components/loggedInNav"
 
 export default function Calendar() {
 
     return (
         <div>
-            <ProfileHeader></ProfileHeader>
+            {/* <ProfileHeader></ProfileHeader> */}
             <div>Calendar</div>
         </div>
     )

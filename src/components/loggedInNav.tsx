@@ -3,6 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
 import { useProfile } from "@/contexts/profileContext"
 import Link from 'next/link'
+import { createClient } from '@/utils/supabase/client';
 
 const user = {
     name: 'Tom Cook',
@@ -22,15 +23,20 @@ function classNames(...classes: Array<string>) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function ProfileHeader() {
+export default function LoggedInNav() {
+    const supabase = createClient();
 
-    const { profile, updateProfile, signOut } = useProfile()
-    
+    const { profile } = useProfile()
+
+    const handleSignOut = async () => {
+        await supabase.auth.signOut();
+    };
+
 
     const userNavigation = [
         { name: 'Your profile', href: '#' },
         // { name: 'Settings', href: '#' },
-        { name: 'Sign out', href: '/login', action: signOut},
+        { name: 'Sign out', action: handleSignOut},
     ]
 
     return (
@@ -116,6 +122,11 @@ export default function ProfileHeader() {
                                     {userNavigation.map((item) => (
                                         <MenuItem key={item.name}>
                                             <a
+                                                onClick={item.action ? (e) => {
+                                                    e.preventDefault()
+                                                    item.action()
+
+                                                }: undefined}
                                                 href={item.href}
                                                 className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden dark:text-gray-200 dark:data-focus:bg-white/5"
                                             >
@@ -177,7 +188,7 @@ export default function ProfileHeader() {
                                 key={item.name}
                                 onClick={item.action ? (e) => {
                                     e.preventDefault()
-                                    item.action
+                                    item.action()
                                 } : undefined}
                                 as="a"
                                 href={item.href}

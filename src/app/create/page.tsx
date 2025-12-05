@@ -1,11 +1,15 @@
-'use client'
-import ProfileHeader from "@/components/profileHeader"
+import { redirect } from 'next/navigation';
+import { getUser } from '@/utils/auth';
 
-export default function CreateRacePage(){
+export default async function CreateRacePage() {
+    const user = await getUser();
+
+    if (!user) {
+        redirect('/login');
+    }
     return (
         <div>
-        <ProfileHeader />
-        <div>Create Race</div>
+            <div>Create Race</div>
         </div>
     )
 }
