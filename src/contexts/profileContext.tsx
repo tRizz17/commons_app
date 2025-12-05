@@ -3,6 +3,7 @@ import { createContext, useContext } from 'react'
 import { Profile } from '@/types/profile'
 import { useRouter } from 'next/navigation'
 
+
 // data structure
 type ProfileProps = {
     profile: Profile | undefined

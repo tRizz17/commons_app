@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <main>
       <ProfileHeader></ProfileHeader>
-      <div>Home Page</div>
-      <div>There should be a sweet gif of sailing here</div>
+      <div>FAQ</div>
     </main>
   );
 }

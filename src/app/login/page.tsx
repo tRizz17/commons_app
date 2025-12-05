@@ -1,10 +1,10 @@
 import { login, signup } from './actions'
-import PageHeader from '@/components/pageHeader'
+import ProfileHeader from '@/components/profileHeader'
 
 export default function loginPage() {
     return (
         <div>
-            <PageHeader />
+            {/* <ProfileHeader /> */}
             <div className='flex min-h-full flex-col justify-center px-6 py-12 lg:px-8'>
                 <form className='flex-col justify-center align-middle'>
                     <label htmlFor='email'>Email:</label>

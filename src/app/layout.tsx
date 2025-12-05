@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/pageHeader";
 import { createClient } from "@/utils/supabase/server";
 import { ProfileProvider } from "@/contexts/profileContext";
 import { Profile, profileSelectString } from "@/types/profile";
