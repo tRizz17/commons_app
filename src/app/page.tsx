@@ -10,6 +10,10 @@ export default function Home() {
         fill
         className="object-cover"
       />
+      <h1 className="absolute z-10 mt-10 left-1/2 -translate-x-1/2 -translate-y-1/2
+                     text-white text-4xl font-bold drop-shadow-xl">
+        Welcome to the Commons Yacht Club
+      </h1>
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function LoggedInNav() {
     return (
         <Disclosure
             as="nav"
-            className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10"
+            className="relative bg-[#68B0AB]"
         >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 justify-between">
@@ -65,19 +65,19 @@ export default function LoggedInNav() {
                         </div>
                         <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
                             {navigation.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
                                     href={item.href}
                                     aria-current={item.current ? 'page' : undefined}
                                     className={classNames(
                                         item.current
-                                            ? 'bg-gray-900 text-white dark:bg-gray-950/50'
-                                            : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                                            ? 'bg-gray-900 text-[#FCEC52] dark:bg-gray-950/50'
+                                            : 'text-[#FCEC52] hover:bg-white/5 hover:text-white',
                                         'rounded-md px-3 py-2 text-sm font-medium',
                                     )}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -86,7 +86,8 @@ export default function LoggedInNav() {
                             <Link href={'/create'}>
                                 <button
                                     type="button"
-                                    className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:shadow-none"
+                                    
+                                    className="relative inline-flex items-center gap-x-1.5 rounded-md bg-[#FCEC52] px-3 py-2 text-sm font-semibold text-[#68B0AB] shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:shadow-none"
                                 >
                                     <PlusIcon aria-hidden="true" className="-ml-0.5 size-5" />
                                     New Race

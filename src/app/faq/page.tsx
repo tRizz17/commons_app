@@ -1,8 +1,67 @@
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
-export default function Home() {
+const faqs = [
+  {
+    question: "What does this site do?",
+    answer:
+      "This site allows anybody to sign up and create a sailing race that gets added to the calendar.",
+  },
+  {
+    question: 'Does it cost anything to create a race?',
+    answer:
+      'Not yet!',
+  },
+  {
+    question: 'Do I need to own a boat to create a race?',
+    answer:
+      'It would be ideal! However, by looking at the calendar and finding races in your area, you can easily connect with the sailors who are racing and possibly crew on a boat.',
+  },
+  {
+    question: 'Is sailing difficult?',
+    answer:
+      "You can learn the basics of sailing in a single day. Mastering it takes a lifetime.",
+  },
+  {
+    question: "Why can't you hear a pterodactyl go to the bathroom?",
+    answer:
+      'Because the pee is silent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quas voluptatibus ex culpa ipsum, aspernatur blanditiis fugiat ullam magnam suscipit deserunt illum natus facilis atque vero consequatur! Quisquam, debitis error.',
+  },
+  {
+    question: 'Why did the invisible man turn down the job offer?',
+    answer:
+      "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
+  },
+]
+
+export default function FaqPage() {
   return (
-    <main>
-      <div>FAQ</div>
-    </main>
-  );
+    <div className="bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            Frequently asked questions
+          </h2>
+          <dl className="mt-16 divide-y divide-gray-900/10">
+            {faqs.map((faq) => (
+              <Disclosure key={faq.question} as="div" className="py-6 first:pt-0 last:pb-0">
+                <dt>
+                  <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
+                    <span className="text-base/7 font-semibold">{faq.question}</span>
+                    <span className="ml-6 flex h-7 items-center">
+                      <PlusSmallIcon aria-hidden="true" className="size-6 group-data-open:hidden" />
+                      <MinusSmallIcon aria-hidden="true" className="size-6 group-not-data-open:hidden" />
+                    </span>
+                  </DisclosureButton>
+                </dt>
+                <DisclosurePanel as="dd" className="mt-2 pr-12">
+                  <p className="text-base/7 text-gray-600">{faq.answer}</p>
+                </DisclosurePanel>
+              </Disclosure>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </div>
+  )
 }
