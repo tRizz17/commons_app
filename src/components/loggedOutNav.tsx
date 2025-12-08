@@ -16,7 +16,7 @@ export default function LoggedOutNav() {
   return (
     <Disclosure
       as="nav"
-      className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10"
+      className="relative bg-[#68B0AB]"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
@@ -32,8 +32,8 @@ export default function LoggedOutNav() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
               <img
-                alt="Your Company"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Commons logo"
+                src="/logo.png"
                 className="h-8 w-auto"
               />
             </div>
@@ -46,8 +46,8 @@ export default function LoggedOutNav() {
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current
-                        ? 'bg-gray-900 text-white dark:bg-gray-950/50'
-                        : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                        ? 'bg-gray-900 text-[#FCEC52] dark:bg-gray-950/50'
+                        : 'text-[#FCEC52] hover:bg-white/5 hover:text-white',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >

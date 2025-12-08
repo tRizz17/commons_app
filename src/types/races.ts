@@ -1,0 +1,32 @@
+
+export type RaceInfo = {
+    id: number,
+    racename: string,
+    about: string,
+    photo: string,
+    organizer: string,
+    boatclass: string,
+    water: string,
+    racedate: string,
+    racetime: number,
+    country: string,
+    addr: string,
+    city: string,
+    state: string,
+    postal: string,
+    creator: string
+}
+
+//   racename text not null,
+//   about text,
+//   photo text,
+//   organizer text,
+//   boatclass text not null,
+//   water text not null,
+//   racedate date not null,
+//   racetime time not null,
+//   country text,
+//   addr text,
+//   city text,
+//   state text,
+//   postal text,

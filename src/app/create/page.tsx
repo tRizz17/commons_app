@@ -22,8 +22,7 @@ import { createrace } from './actions'
 export default function CreateRace() {
     return (
         <div className="mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
-            <div className="mx-auto max-w-3xl">{/* Content goes here */}
+            <div className="mx-auto max-w-3xl">
                 <form>
                     <div className="space-y-12 sm:space-y-16">
                         <div>

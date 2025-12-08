@@ -21,17 +21,7 @@ const faqs = [
     question: 'Is sailing difficult?',
     answer:
       "You can learn the basics of sailing in a single day. Mastering it takes a lifetime.",
-  },
-  {
-    question: "Why can't you hear a pterodactyl go to the bathroom?",
-    answer:
-      'Because the pee is silent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quas voluptatibus ex culpa ipsum, aspernatur blanditiis fugiat ullam magnam suscipit deserunt illum natus facilis atque vero consequatur! Quisquam, debitis error.',
-  },
-  {
-    question: 'Why did the invisible man turn down the job offer?',
-    answer:
-      "He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed unde rerum deserunt eius.",
-  },
+  }
 ]
 
 export default function FaqPage() {
