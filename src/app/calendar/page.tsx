@@ -29,7 +29,7 @@ export default function Calendar() {
                 <div className="mx-auto max-w-3xl mt-6">
                     <ul role="list" className="space-y-3">
                         {races.map((race) => (
-                            <li key={race.id} className="overflow-hidden rounded-md bg-white px-6 py-4 shadow-sm">
+                            <li key={race.id} className="overflow-hidden rounded-md bg-white px-6 py-4 shadow-sm border-2" style={{ borderColor: '#68B0AB' }}>
                                 <h1 className="font-bold text-xl mb-3">{race.racename}</h1>
                                 <h2 className="text-lg mb-1">Date: {race.racedate}</h2>
                                 <h2 className="text-lg mb-1">Time: {race.racetime}</h2>
