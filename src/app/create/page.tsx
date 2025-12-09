@@ -1,18 +1,3 @@
-// import { redirect } from 'next/navigation';
-// import { getUser } from '@/utils/auth';
-
-// export default async function CreateRacePage() {
-//     const user = await getUser();
-
-//     if (!user) {
-//         redirect('/login');
-//     }
-//     return (
-//         <div>
-//             <div>Create Race</div>
-//         </div>
-//     )
-// }
 
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'

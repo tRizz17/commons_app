@@ -13,7 +13,6 @@ const user = {
 }
 const navigation = [
     { name: 'Home', href: '/', current: false },
-    // { name: 'Team', href: '#', current: false },
     { name: 'FAQ', href: '/faq', current: false },
     { name: 'Race Calendar', href: '/calendar', current: false },
 ]
@@ -35,7 +34,6 @@ export default function LoggedInNav() {
 
     const userNavigation = [
         { name: 'Your profile', href: '#' },
-        // { name: 'Settings', href: '#' },
         { name: 'Sign out', action: handleSignOut},
     ]
 

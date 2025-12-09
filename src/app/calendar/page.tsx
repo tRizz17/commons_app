@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useState } from "react"
 import { RaceInfo } from "@/types/races"
+import { createClient } from "@/utils/supabase/client"
+
 
 export default function Calendar() {
 
